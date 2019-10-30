@@ -1,5 +1,5 @@
 import React from 'react';
-import { tsImportEqualsDeclaration } from '@babel/types';
+
 
 class ToDoForm extends React.Component {
     constructor() {
@@ -28,13 +28,21 @@ class ToDoForm extends React.Component {
     render() {
         console.log('rendering form');
         return(
+          
             <form onSubmit={this.handleSubmit}>
                 <input
                     onChange={this.handleChanges}
                     type='text'
                     name='item'
                     value={this.state.itemName}
+                    placeholder='What do you need to do?'
                 />
+                <button>Add</button>
+           
+                {/* <button className='clear-btn' onClick={this.props.clearCompleted}>
+                Clear Completed
+                </button>     */}
+
             </form>
         );
     }

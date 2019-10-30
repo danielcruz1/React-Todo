@@ -6,13 +6,13 @@ const ToDo = props => {
         verboseClassName = verboseClassName + ' completed';
     }
 
-    const handlClick = () => {
+    const handleClick = () => {
         props.toggleCompleted(props.item.id)
     };
 
     return (
-        <div onClick={handlClick} className={verboseClassName}>
-            <p>{props.item.name}</p>
+        <div onClick={handleClick} className={verboseClassName}>
+            <p>{props.item.task}</p>
         </div>
     );
 };

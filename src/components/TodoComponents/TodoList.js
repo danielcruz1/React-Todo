@@ -10,7 +10,7 @@ const ToDoList = props => {
                 <ToDo
                  key={item.id}
                  item={item}
-                 toggleCompleted={prop.toggleCompleted}
+                 toggleCompleted={props.toggleCompleted}
                 />
             ))}
             <button className='clear-btn' onClick={props.clearCompleted}>
