@@ -1,7 +1,8 @@
 import React from 'react';
 import ToDoList from '../src/components/TodoComponents/TodoList';
 import ToDoForm from './components/TodoComponents/TodoForm';
-import { placeholder } from '@babel/types';
+import './components/TodoComponents/Todo.css';
+
 
 const list = [
   // {
@@ -68,6 +69,20 @@ class App extends React.Component {
       ]
     });
   };
+
+  //***STRETCH***
+
+  componentWillMount() {
+    localStorage.getItem('todo') && this.setState({
+      todo: JSON.parse(localStorage.getItem('todo')),
+      isLoading: false
+    })
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem('todo', JSON.stringify(nextState.todo));
+    localStorage.setItem('todoDate', Date.now());
+  }
 
   render() {
     console.log('rendering...');

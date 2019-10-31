@@ -1,4 +1,5 @@
 import React from 'react';
+import { Persist } from 'react-persist';
 
 
 class ToDoForm extends React.Component {
@@ -30,6 +31,7 @@ class ToDoForm extends React.Component {
         return(
           
             <form onSubmit={this.handleSubmit}>
+                
                 <input
                     onChange={this.handleChanges}
                     type='text'
@@ -37,12 +39,9 @@ class ToDoForm extends React.Component {
                     value={this.state.itemName}
                     placeholder='What do you need to do?'
                 />
+
                 <button>Add</button>
            
-                {/* <button className='clear-btn' onClick={this.props.clearCompleted}>
-                Clear Completed
-                </button>     */}
-
             </form>
         );
     }
