@@ -71,7 +71,6 @@ class App extends React.Component {
   };
 
   //***STRETCH***
-
   componentWillMount() {
     localStorage.getItem('todo') && this.setState({
       todo: JSON.parse(localStorage.getItem('todo')),
@@ -83,6 +82,7 @@ class App extends React.Component {
     localStorage.setItem('todo', JSON.stringify(nextState.todo));
     localStorage.setItem('todoDate', Date.now());
   }
+  //***STRETCH***
 
   render() {
     console.log('rendering...');
